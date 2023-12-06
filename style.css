@@ -1,0 +1,219 @@
+:root{
+    --linear: linear-gradient(0deg, hsl(249, 99%,64%) , hsl(278, 94%, 30%));
+    --error: hsl(0, 100%, 66%);
+    --white: hsl(0, 0%, 100%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+    --font-size: 18px;
+}
+
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap');
+
+*{
+    padding: 0%;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Space Grotesk', sans-serif;
+   font-weight: 700;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+}
+/* style left side of flex */
+
+.left{
+    width: 33%;
+    height: 100vh;
+    position: relative;
+    background-image: url('/images/bg-main-desktop.png');
+}
+
+.card-front{
+position: absolute;
+top: 10%;
+left: 30%;
+width: 100%;
+}
+.card-front img{
+    width: 100%;
+}
+.card-back{
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    width: 100%;
+}
+
+.card-back img{
+    width: 100%;
+}
+
+/* postion form element */
+
+.right{
+    width: 67%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+}
+.right form{
+    width: 40%;
+}
+
+label{
+    color: var(--Very-dark-violet);
+    display: inline-block;
+    margin: 7% 0 2px;
+}
+input{
+    width: 100%;
+    padding: 0.5em;
+    border: solid 1px var(--Dark-grayish-violet);
+    font-size: var(--font-size);
+    border-radius: 7px;
+}
+
+
+input:focus{
+    outline: none;
+    border: solid 1px;
+    border-color: var(--Very-dark-violet);
+}
+
+input[value=Confirm], input[value=Continue]{
+    margin-top: 7%;
+    cursor: pointer;
+    color: var(--white);
+    background-color: var(--Very-dark-violet);
+}
+
+.cvc-and-exp{
+    justify-content: space-between;
+    display: flex;
+}
+.exp{
+    width: 50%;
+    align-items: center;
+    display: flex;
+}
+.cvc{
+    width: 50%;
+}
+.a{
+    width: 100%;
+}
+.one{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+}
+#month{
+    width: 45%;
+}
+#year{
+    width: 45%;
+}
+
+/* smalls in first */
+.card-front{
+    color: var(--white);
+}
+.card-front span{
+    position: absolute;
+}
+.card-logo{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+.card-number{
+    top: 50%;
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 24px;
+}
+.card-name{
+    bottom: 10%;
+    left: 10%;
+}
+.expaire{
+    right: 10%;
+    bottom: 10%;
+}
+.cvc-one{
+    position: absolute;
+    color: var(--white);
+    top: 45%;
+    right: 15%;
+}
+
+/* style continue */
+.complete{
+    display: none;
+}
+.complete img{
+    display: block;
+    margin: auto;
+}
+.complete h1{
+    text-align: center;
+    padding-top: 10%;
+}
+.complete p{
+    text-align: center;
+    padding-top: 10%;
+}
+.complete input{
+    text-align: center;
+}
+
+/* mobile effect */
+
+@media screen and (max-width: 375px) {
+    .container{
+        flex-direction: column;
+        width: 100%;
+    }
+    .left{
+        width: 100%;
+        height: 37vh;
+    }
+    .card-front{
+        width: 70%;
+        top: 48%;
+        left: 5%;
+        z-index: 10;
+    }
+    .card-front img{
+        width: 100%;
+    }
+
+    /* back card */
+    .card-back{
+        width: 70%;
+        top: 10%;
+        left: 25%;
+    }
+    .card-back img{
+        width: 100%;
+    }
+    /* -----------------------*/
+    .right{
+        width: 100%;
+        height: 75vh;
+        padding: 0;
+        margin: 0;
+    }
+    .right form{
+        width: 100%;
+        padding: 2%;
+        margin: 0;
+    }
+  }
